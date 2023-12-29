@@ -1,5 +1,5 @@
 body {
-  background-image: url('this_is_the_url');
+  background-image: url(https://raw.githubusercontent.com/akshitdhiman01/app_design_flask/main/Goofy%20Background.webp);
   background-size: cover;
   background-repeat: no-repeat;
 }
