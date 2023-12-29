@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    #upload-btn-wrapper {
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+    }
+
+    #upload-btn-wrapper input[type=file] {
+      font-size: 100px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+    }
+
+    #upload-btn-wrapper .btn {
+      border: 2px solid gray;
+      color: gray;
+      background-color: white;
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    #upload-btn-wrapper .btn:hover {
+      border-color: #333;
+    }
+
+    #keyword-checkbox {
+      margin-top: 20px;
+    }
+
+    #keywords-input {
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Scientific Clickbait</h1>
+
+  <div id="upload-btn-wrapper">
+    <button class="btn">Choose a PDF</button>
+    <input type="file" name="myfile" />
+  </div>
+
+  <div id="keyword-checkbox">
+    <input type="checkbox" id="show-keywords" onchange="toggleKeywordsInputs()">
+    <label for="show-keywords">Show Keywords</label>
+  </div>
+
+  <div id="keywords-inputs">
+    <div class="keyword-input">
+      <label for="keyword1">Keyword 1:</label>
+      <input type="text" id="keyword1" name="keyword1">
+    </div>
+    <div class="keyword-input">
+      <label for="keyword2">Keyword 2:</label>
+      <input type="text" id="keyword2" name="keyword2">
+    </div>
+  </div>
+
+  <script>
+    function toggleKeywordsInput() {
+      var keywordsInput = document.getElementById("keywords-input");
+      var checkbox = document.getElementById("show-keywords");
+
+      if (checkbox.checked) {
+        keywordsInput.style.display = "block";
+      } else {
+        keywordsInput.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>

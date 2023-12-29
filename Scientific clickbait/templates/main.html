@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Scientific Clickbait</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}"
+</head>
+	<body>
+	<center>
+		<h1>Scientific Clickbait</h1>
+		<form action="/toggle" method="post">
+        		<label for="goofy_switch" class="toggle">
+				<input type="submit" id="goofy_switch">
+			</label>
+    		</form>
+		<br><br><br><br>
+		<img src = "C:\Users\akshi\OneDrive\Pictures\Screenshots\Model.png">
+		<br>
+		<form method="POST" action="/clickbait">
+			<!--Command for the upload button, input type is file-->
+			<div id="upload-btn-wrapper">
+    				<input type="file" name="myfile">
+  			</div>
+			<br>
+        		<label for="switch" class="toggle">
+				<input type="checkbox" id="switch">
+				{% for message in get_flashed_messages()%}
+				<p>{{message}}</p>
+				{% endfor %}
+       			</label>
+
+			<!--The below text field will only be visible once the checkbox is switched-->
+			<div id = "text_input" class="input-field" style="display: none;">
+  				<input type="text" id="user_input" name = "user_input" placeholder="Enter comma separated keywords and press Enter">
+			</div>
+			<script>
+
+				<!--Getting the IDs of the checkbox and the text field-->
+    				const checkbox = document.getElementById('switch');
+    				const textInput = document.getElementById('text_input');
+				const userInput = document.getElementById('user_input');
+				<!--Performing an event once the checkbox is switched-->
+
+	    			checkbox.addEventListener('change', function() {
+	      				if (this.checked) {
+	        				textInput.style.display = 'block';
+	        				userInput.focus();
+	      				} else {
+	        				textInput.style.display = 'none';
+	      				}
+				}
+				});
+				
+			</script>
+	</form>
+	<form>
+			<br><br>
+			<div id="generate_btn">
+				<input type="submit" value = "Generate Title">
+			</div>
+			<div id="title_output" style="display: none">
+				<h3>"Generated Title"</h3>
+			</div>
+			<script>
+			<!--Getting the IDs of the Generate Button and the output field-->
+				const GenerateButton = document.getElementById('generate_btn')
+				const OutputTitle = document.getElementById("title_output")
+
+			<!--Performing an event once the button is clicked-->
+			GenerateButton.addEventListener('click', function() {
+				OutputTitle.style.display = 'block';
+			});
+			</script>
+			
+	</form>
+	</body>
+</html>
+
+
+		

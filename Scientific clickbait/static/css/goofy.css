@@ -1,0 +1,11 @@
+body {
+  background-image: url('this_is_the_url');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  background: linear-gradient(to right, black, orange);
+  -webkit-background-clip: text;
+  color: transparent;
+}
