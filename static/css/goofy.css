@@ -1,0 +1,44 @@
+body {
+  background-image: url('https://raw.githubusercontent.com/akshitdhiman01/app_design_flask/main/Goofy%20Background.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+h1 {
+  background: linear-gradient(to right, black, purple);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+#check {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 79px;
+  background: linear-gradient(145deg, #161e90, #1a23ab);
+  box-shadow:  5px 5px 5px #131a80,
+              -5px -5px 5px #1d28c0;
+}
+
+#check:hover {
+  filter: brightness(50%);
+}
+
+#check:active {
+  transform: translateY(2px);
+}
+
+#check[data-state="yes"] {
+  background-color: green;
+  color: white;
+}
+
+#check[data-state="no"] {
+  background-color: red;
+  color: white;
+}
