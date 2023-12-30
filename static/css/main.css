@@ -11,6 +11,10 @@ h1 {
   color: transparent;
 }
 
+#para{
+  color: white;
+}
+
 #check {
   position: absolute;
   top: 80px;
@@ -107,6 +111,10 @@ h1 {
 
 #toggle_switch:checked + #switch_slider:before {
  transform: translateX(1.5em);
+}
+
+#title_output{
+  color: white;
 }
 
 .switch {
